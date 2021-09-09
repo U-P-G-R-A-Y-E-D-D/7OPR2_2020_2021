@@ -1,0 +1,40 @@
+@startuml
+
+class Player{
++ <<get/set>> name : String
++ <<get/set>> surname : String
++ <<get/set>> nick : String
++ <<get/set>> oneCharIcon : character
++ <<get/set>> email : String
++ <<get/set>> gender : Gender
++ <<get/set>> height : int
++ <<get/set>> weight : int
++ <<get/set>> position : PlayerPosition
++ <<get/set>> skillLevel : int
++ <<get/set>> credit : double
+}
+
+Player --> PlayerPosition
+Player --> Gender
+
+enum PlayerPosition{
+  ATTACKER,
+  DEFENDER,
+  MIDDLE,
+  SWEEPER,
+  SUPPORT
+}
+
+enum Gender{
+MALE,
+FEMALE
+}
+
+class FilteringManager{
+  + {static} applyFilter(Player[] players, ????) : Player[]
+}
+
+note bottom of FilteringManager:  Místo ??? doplňte vhodný parametr/vhodné parametry
+
+
+@enduml

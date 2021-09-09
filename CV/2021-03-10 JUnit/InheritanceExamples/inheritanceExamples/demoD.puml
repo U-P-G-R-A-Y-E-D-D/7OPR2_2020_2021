@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface SupportSave{
+  saveToFile(fileName : string)
+}
+
+class Fridge
+class MicrowaveOwen
+class DishWasher
+class Car
+class Invoice
+
+class Goods
+
+Goods <|-- Fridge
+Goods <|-- MicrowaveOwen
+Goods <|-- DishWasher
+Goods <|-- Car
+
+SupportSave <|.. Fridge
+SupportSave <|.. MicrowaveOwen
+SupportSave <|.. DishWasher
+SupportSave <|.. Invoice
+
+@enduml

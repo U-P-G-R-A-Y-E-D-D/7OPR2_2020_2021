@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Image
+
+class BmpImage{
+ rastr
+}
+
+class JpgImage{
+x
+}
+
+Image <|-- BmpImage
+Image <|-- JpgImage
+
+@enduml

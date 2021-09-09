@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class AbstractValue
+
+class DoubleValue
+class IntegerValue
+
+AbstractValue <|-- DoubleValue
+AbstractValue <|-- IntegerValue
+
+abstract class AbstractDefinition
+class StringDefinition
+class UrlDefinition
+AbstractDefinition <|-- StringDefinition
+AbstractDefinition <|-- UrlDefinition
+
+
+
+class Item{
+  definition : AbstractDefinition
+
+}
+
+@enduml

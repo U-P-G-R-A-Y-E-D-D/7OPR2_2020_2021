@@ -1,0 +1,18 @@
+@startuml
+
+class Result
+
+class NoRootsResult
+class SingleRootResult{
++ x1 : double
+}
+class TwoRootsResult{
++ x1 : double
++ x2 : double
+}
+
+Result <|-- NoRootsResult
+Result <|-- SingleRootResult
+Result <|-- TwoRootsResult
+
+@enduml

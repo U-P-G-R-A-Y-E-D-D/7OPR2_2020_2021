@@ -1,0 +1,15 @@
+@startuml
+
+class Engine {
+power : int
+volume : double
+}
+
+class Car {
+  type : String
+
+}
+
+Engine o-- Car
+
+@enduml

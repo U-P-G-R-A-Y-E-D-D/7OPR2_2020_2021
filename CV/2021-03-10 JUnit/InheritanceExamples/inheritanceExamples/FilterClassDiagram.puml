@@ -1,0 +1,53 @@
+@startuml
+
+class FilterManager{
+  + <<static>> applyFilter(files :FileInfo[], <<params>> filters : Filters) : FileInfo[]
+  + <<static>> applyFilter(files : List<FileInfo>, <<params>> filters : Filters) : List<FileInfo>
+  + <<static>> applyFilterDirectly(files : List<FileInfo>, <<params>> filters : Filters) : void
+  + <<static>> applyFilter(files : Set<FileInfo>, <<params>> filters : Filters) : Set<FileInfo>
+  + <<static>> applyFilterDirectly(files : Set<FileInfo>, <<params>> filters : Filters) : void
+  }
+
+class FileInfo{
+ + nameWithoutExtension
+ + extension
+ + fullDirectory
+ + sizeInB
+ + creationDateTime
+ + lastAccessDateTime
+ + isReadOnly
+ + isSystem
+ + isArchive
+}
+
+abstract class Filter{
+ + accepts(fileInfo : FileInfo) : boolean
+}
+
+class ExtensionFilter{
+  + extension : String
+}
+
+class MinimalSizeFilter{
+ + minimalSize : long
+}
+
+class IsToArchiveFilter{
+}
+
+class AggregationFilter{
+  + <<final>> operand : AggregationOperand
+  + <<final>> filters : Filter[]
+}
+
+enum AggregationOperand{
+AND,
+OR
+}
+
+Filter <|-- ExtensionFilter
+Filter <|-- MinimalSizeFilter
+Filter <|-- IsToArchiveFilter
+Filter <|-- AggregationFilter
+
+@enduml
