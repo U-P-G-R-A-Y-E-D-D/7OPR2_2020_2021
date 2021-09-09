@@ -1,0 +1,20 @@
+@startuml
+
+class App
+
+package Lib{
+
+class BookManager{
++ add(book : Book) : boolean
++ getBooksSortedByTitle(author : String) : List<Book>
+}
+
+class HashMap
+
+HashMap --o BookManager
+
+}
+
+App --> BookManager
+
+@enduml

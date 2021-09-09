@@ -1,0 +1,23 @@
+@startuml
+
+class App
+
+package Lib{
+
+class Bus
+
+class BusEvidence{
++ addByDepartment(department : String, bus : Bus) : void
++ getAllByDepartment(department:String, orderingCriteria) : List<Bus>
+}
+}
+
+package java.util{
+class HashMap
+}
+
+App --> BusEvidence
+
+BusEvidence *-- HashMap
+
+@enduml
