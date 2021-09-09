@@ -1,0 +1,21 @@
+@startuml
+
+class Queue<T>{
+- <<final>> inner : List<T>
+- <<final>> behavior : QueueBehavior
++ add (item : T) : void
++ take() : T
++ contains(item : T) : boolean
++ peek() : T
++ .ctor(behavior : QueueBehavior)
+}
+
+enum QueueBehavior{
+  EXCEPTION
+  IGNORE
+}
+
+Queue --> QueueBehavior
+
+
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+
+abstract class Stack<T>{
+- data: List<T>
++ put(item : T) : void
++ pop() : T
++ peek() : T
++ contains(item : T) : boolean
+# internalPut(item : T) : void
+}
+
+class IgnoredStack<T>{
++ <<override>> put(item : T) : void
+}
+
+class ExceptionStack<T>{
++ <<override>> put(item : T) : void
+}
+
+IgnoredStack -up-|> Stack
+ExceptionStack -up-|> Stack
+
+@enduml

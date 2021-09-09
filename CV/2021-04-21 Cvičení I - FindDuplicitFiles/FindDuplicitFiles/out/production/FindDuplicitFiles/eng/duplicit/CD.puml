@@ -1,0 +1,13 @@
+@startuml
+
+class DuplicitFileProvider{
++ findDuplicitFiles(folder, filePattern) : Set<DuplicitFile>
+}
+
+class DuplicitFile{
+- name : String
+- size : long
+- locations : Set<String>
+}
+
+@enduml
